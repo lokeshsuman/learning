@@ -1,0 +1,96 @@
+<% include header %>
+<% include navbar%>
+<section class="edit-section">
+  <div class="container">
+    <%if(success==1){%>
+      <div class="alert alert-success fade in">
+          <strong>Success!</strong> Record Successfully Update
+        </div>
+      <%}%>
+    <h2 align="center">Employee Update</h2>
+    <input type="hidden" name="emp_id" value="<%= employee.length ? employee[0]._id : ''%>">
+    <form class="editemployee">
+      <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label name-label">Name</label>
+      <div class="col-10">
+        <input class="form-control" type="text" name="name" value="<%= employee.length ? employee[0].name : ''%>" id="example-text-input">
+
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-email-input" class="col-2 col-form-label email-label">Email</label>
+      <div class="col-10">
+        <input class="form-control" type="email" name="email" value="<%= employee.length ? employee[0].email : ''%>" id="example-email-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-password-input" class="col-2 col-form-label password-label">Password</label>
+      <div class="col-10">
+        <input class="form-control" type="password" name="password" value="<%= employee.length ? employee[0].password : ''%>" id="example-password-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-tel-input" class="col-2 col-form-label mobileno-label">Mobile No.</label>
+      <div class="col-10">
+        <input class="form-control" type="tel" name="mobile_no" value="<%= employee.length ? employee[0].mobile_no : ''%>" id="example-tel-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label dob-label">D.O.B.</label>
+      <div class="col-10">
+        <input class="form-control" type="date" value="<%= employee.length ? employee[0].dob : ''%>" name="dob" id="example-date-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label department-label">Department </label>
+      <div class="col-10">
+        <select class="form-control" name="department">
+          <%
+          var dept = [ "IT", "Marketing", "Security", "Election"];
+          for ( var i = 0; i < dept.length; i++ )
+          {
+
+              var selected_dept = ( employee.length && employee[0].department == dept[i] ) ? "selected" : "";
+              %><option value="<%=dept[i] %>"  <%=selected_dept %>><%=dept[i] %></option><%
+          }
+          %>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-number-input" class="col-2 col-form-label age-label">Age</label>
+      <div class="col-10">
+        <input class="form-control" type="number" name="age" value="<%= employee.length ? employee[0].age : ''%>" id="example-number-input">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label gender-label">Gender </label>
+      <div class="col-10">
+        <select class="form-control" name="gender">
+          <%
+          var mygender = [ "Male", "Female", "Other"];
+          for ( var i = 0; i < mygender.length; i++ )
+          {
+
+              var selected = ( employee.length && employee[0].gender == mygender[i] ) ? "selected" : "";
+              %><option value="<%=mygender[i] %>"  <%=selected %>><%=mygender[i] %></option><%
+          }
+          %>
+        </select>
+      </div>
+    </div>
+
+  <div class="form-group row">
+      <button type="submit" class="btn btn-success">Update</button>
+  </div>
+
+    </form>
+  </div>
+</section>
+<script type="text/javascript" src="/javascripts/editemployee.js"></script>
+<%include footer%>

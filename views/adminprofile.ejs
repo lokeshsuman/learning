@@ -1,0 +1,76 @@
+<% include header %>
+<%include navbar%>
+<h2><%=employee.name%></h2>
+<section class="user-live-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary" style="width:110px;">Employees <span class="badge emp-counter allEmp-count"></span></button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-success" style="width:110px;">Live <span class="badge emp-counter emp-live"></span></button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-warning" style="width:110px;">Leave <span class="badge emp-counter emp-leave">0</span></button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-primary" style="width:110px;">Employees <span class="badge emp-counter">0</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-user-table">
+  <div class="container">
+    <div class="row search-area">
+      <h4 class="text-center" style="margin-bottom:20px;">Search Area</h4>
+      <div class="col-md-4">
+        <select class="form-control search-by" name="">
+          <option value="name">Name</option>
+          <option value="dept">Depatment</option>
+          <option value="email">Email</option>
+          <option value="mobile_no">Mobile No.</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <input type="text" name="search-input" placeholder="Search here" class="form-control">
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Dept.</th>
+          <th>Live/Offline</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="user-tbody">
+      </tbody>
+    </table>
+<!--
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  -->
+  </div>
+</section>
+<script type="text/javascript" src="/javascripts/employeesTableManage.js"></script>
+<% include footer%>

@@ -1,0 +1,14 @@
+<% include employ-views/header.ejs%>
+<% include employ-views/navbar.ejs%>
+<section class="wrapper-section">
+    <div class="col-md-12">
+
+      <div class="col-md-2">
+        <div class="emp-dp">
+          <img class="myprofile" src="<%=(myprofile_pic) ? '/uploads/'+myprofile_pic: '/images/no-profile.jpg'; %>" alt="">
+        </div>
+      </div>
+    </div>
+</section>
+<script type="text/javascript" src="/javascripts/employ-scripts/emp-script.js"></script>
+<% include employ-views/footer.ejs%>

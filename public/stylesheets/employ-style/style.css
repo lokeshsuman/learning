@@ -1,0 +1,33 @@
+/*wrapper-section*/
+
+.wrapper-section{
+  min-height: 450px;
+}
+/*employee dp*/
+.emp-dp{
+  width: 100%;
+  border: 1px solid #ddd;
+  height: 200px;
+  background: #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+.myprofile{
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+}
+/*footer*/
+footer .well{
+margin-bottom: 0;
+}
+/*details employee*/
+
+.emp-details>tbody>tr>th,.emp-details>tbody>tr>td{
+  border: none;
+}
+
+.emp-details>tbody>tr>th{
+  width: 50%;
+}

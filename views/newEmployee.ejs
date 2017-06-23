@@ -1,0 +1,113 @@
+<% include header %>
+<%include navbar%>
+
+<section class="employ-registration-section  clear-fix">
+<div class="container" name="newForm">
+
+<% if(success==true) {%>
+  <div class="alert alert-success fade in">
+      <strong>Success!</strong> Record Successfully save
+    </div>
+  <% }else if(success==2){%>
+    <div class="alert alert-danger fade in">
+        <strong>Error!</strong> some error.
+    </div>
+    <%}else if(success=='already'){%>
+      <div class="alert alert-danger fade in">
+          <strong>Error!</strong> Employee Already Available.
+      </div>
+      <%}%>
+
+
+
+
+  <h2 align="center">Employ Registration</h2>
+  <form class="newEmployee">
+    <div class="form-group row">
+    <label for="example-text-input" class="col-2 col-form-label name-label">Name</label>
+    <div class="col-10">
+      <input class="form-control" type="text" name="name" value="<%= employ ? employ.name : ''%>" id="example-text-input">
+
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-email-input" class="col-2 col-form-label email-label">Email</label>
+    <div class="col-10">
+      <input class="form-control" type="email" name="email" value="<%= employ ? employ.email : ''%>" id="example-email-input">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="example-password-input" class="col-2 col-form-label password-label">Password</label>
+    <div class="col-10">
+      <input class="form-control" type="password" name="password" value="<%= employ ? employ.password : ''%>" id="example-password-input">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-tel-input" class="col-2 col-form-label mobileno-label">Mobile No.</label>
+    <div class="col-10">
+      <input class="form-control" type="tel" name="mobile_no" value="<%= employ ? employ.mobile_no : ''%>" id="example-tel-input">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="example-date-input" class="col-2 col-form-label dob-label">D.O.B.</label>
+    <div class="col-10">
+      <input class="form-control" type="date" value="<%= employ ? employ.dob : ''%>" name="dob" id="example-date-input">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="example-date-input" class="col-2 col-form-label department-label">Department </label>
+    <div class="col-10">
+      <select class="form-control" name="department">
+
+
+        <%
+        var dept = [ "IT", "Marketing", "Security", "Election"];
+        for ( var i = 0; i < dept.length; i++ )
+        {
+
+            var selected_dept = ( employ && employ.department == dept[i] ) ? "selected" : "";
+            %><option value="<%=dept[i] %>"  <%=selected_dept %>><%=dept[i] %></option><%
+        }
+        %>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="example-number-input" class="col-2 col-form-label age-label">Age</label>
+    <div class="col-10">
+      <input class="form-control" type="number" name="age" value="<%= employ ? employ.age : ''%>" id="example-number-input">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="example-date-input" class="col-2 col-form-label gender-label">Gender </label>
+    <div class="col-10">
+      <select class="form-control" name="gender">
+        <%
+        var mygender = [ "Male", "Female", "Other"];
+        for ( var i = 0; i < mygender.length; i++ )
+        {
+
+            var selected = ( employ && employ.gender == mygender[i] ) ? "selected" : "";
+            %><option value="<%=mygender[i] %>"  <%=selected %>><%=mygender[i] %></option><%
+        }
+        %>
+      </select>
+    </div>
+  </div>
+
+<div class="form-group row">
+    <button type="submit" class="btn btn-success">Submit</button>
+</div>
+
+  </form>
+</div>
+
+</section>
+
+<% include footer%>
+<script type="text/javascript" src="/javascripts/emplyRegisterScript.js"></script>

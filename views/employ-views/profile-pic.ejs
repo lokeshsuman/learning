@@ -1,0 +1,23 @@
+<%include header.ejs%>
+<%include navbar.ejs%>
+<section class="wrapper-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-offset-4 col-md-3 col-lg-offset-4 col-lg-3">
+              <div class="well details">
+                <div class="emp-dp">
+                  <img class="myprofile" src="<%=(myprofile_pic) ? '/uploads/'+myprofile_pic: '/images/no-profile.jpg'; %>" alt="">
+                </div>
+                <form class="dpform form-control text-center" action="/employee/profile-pic" method="post" enctype="multipart/form-data" style="border:none;">
+                  <label for="sdh" class="btn btn-success btn-sm"> Browse   </label>
+                  <input type="file" id="sdh" name="profile-pic" style="display:none;">
+                  <button type="submit" class="btn btn-primary btn-sm">Upload</button>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<script type="text/javascript" src="/javascripts/employ-scripts/emp-script.js"></script>
+<%include footer.ejs%>

@@ -1,0 +1,49 @@
+<%include header.ejs%>
+<%include navbar.ejs%>
+<section class="wrapper-section">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+              <div class="well details">
+                <table class="table emp-details">
+                  <tbody>
+                    <tr>
+                      <th>Name</th>
+                      <td><%=employee.name%></td>
+                    </tr>
+                    <tr>
+                      <th>Email</th>
+                      <td><%=employee.email%></td>
+                    </tr>
+                    <tr>
+                      <th>Mobile No.</th>
+                      <td><%=employee.mobile_no%></td>
+                    </tr>
+                    <tr>
+                      <th>Skill</th>
+                      <td><%=employee.department%></td>
+                    </tr>
+                    <tr>
+                      <th>Gender</th>
+                      <td><%=employee.gender%></td>
+                    </tr>
+                    <tr>
+                      <th>Born</th>
+                      <td><%=employee.dob%></td>
+                    </tr>
+                    <tr>
+                      <th>Age</th>
+                      <td><%=employee.age%></td>
+                    </tr>
+                    <tr>
+                      <th>Joining Date</th>
+                      <td><%=employee.date%></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<%include footer.ejs%>
